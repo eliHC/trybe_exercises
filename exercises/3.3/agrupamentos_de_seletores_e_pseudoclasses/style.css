@@ -1,15 +1,22 @@
-h1, p {
-    text-align: center;
+div:hover {
+  border-style: inset;
 }
-
-ol:hover {
-    background-color: antiquewhite; 
+div:nth-of-type(1){
+  background-color: cornflowerblue;
 }
-
-li:active{
-    font-family: 'Arial Narrow Bold', sans-serif;
+div:nth-of-type(2){
+    background-color: darkgoldenrod;
 }
-
-ol, ul {
-    list-style: none;
+div:nth-of-type(3){
+    padding: 20px;
+    background-color: darkgreen;
+}
+div:nth-of-type(4){
+    background-color: darkolivegreen;
+}
+div:nth-of-type(5){
+    background-color: gainsboro;
+}
+div:nth-child(odd){
+    font-style: italic;
 }
