@@ -1,0 +1,15 @@
+h1, p {
+    text-align: center;
+}
+
+ol:hover {
+    background-color: antiquewhite; 
+}
+
+li:active{
+    font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+ol, ul {
+    list-style: none;
+}
