@@ -39,6 +39,9 @@ info.recorrente = 'sim';
 //5>>       
 //5>>       for (let key in info, info2) {
 //5>>           console.log(info[key] + ' e ' + info2[key]);
+//5>>           if (info.recorrente == info2.recorrente){
+//5>>               console.log('Ambos recorrentes');
+//5>>           }
 //5>>       }
 //5>>       
 
