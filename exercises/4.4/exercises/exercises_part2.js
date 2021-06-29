@@ -45,17 +45,34 @@
 //2.alt>>       
 
 
-let arrayX = [11, 88, 102, 66, 90, 200, 7, 8, 91];
+//3>>       let arrayX = [11, 88, 102, 66, 90, 200, 7, 8, 91];
+//3>>       
+//3>>       
+//3>>       function smallestIndex(array){
+//3>>           let min = 0
+//3>>           for (let index = 0; index < array.length; index += 1){
+//3>>               if (array[index] < array[min]){
+//3>>                   min = index;
+//3>>               }
+//3>>           }
+//3>>           return min;
+//3>>       }
+//3>>       
+//3>>       console.log(smallestIndex(arrayX))
+//3>>       
 
 
-function smallestIndex(array){
-    let min = 0
-    for (let index = 0; index < array.length; index += 1){
-        if (array[index] < array[min]){
-            min = index;
-        }
-    }
-    return min;
-}
-
-console.log(smallestIndex(arrayX))
+//4>>       let arrayX = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
+//4>>       
+//4>>       function biggestName (array){
+//4>>           let currentBiggest = '';
+//4>>           for (index = 0; index < array.length; index += 1){
+//4>>               if (currentBiggest.length < array[index].length){
+//4>>                   currentBiggest = array[index];
+//4>>               }
+//4>>           }
+//4>>           return currentBiggest;
+//4>>       }
+//4>>       
+//4>>       console.log(biggestName(arrayX));
+//4>>       
