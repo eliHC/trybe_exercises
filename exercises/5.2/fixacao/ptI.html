@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="paiDoPai">pai do pai
+        <div id="pai">_ pai
+          <div id="primeiroFilho">__ primeiro Filho</div>
+          <div id="elementoOndeVoceEsta">__ onde estou
+            <div id="primeiroFilhoDoFilho">___ primeiro filho do filho</div>
+            <div id="segundoEUltimoFilhoDoFilho">___ segundo filho o filho</div>
+          </div>
+          Atenção!
+          <div id="terceiroFilho">__ terceiro filho</div>
+          <div id="quartoEUltimoFilho">__ quarto filho</div>
+        </div>
+    </div>
+    <script>
+        let iAmHere = document.querySelector('#elementoOndeVoceEsta');
+        iAmHere.parentNode.style.color= 'red';
+        iAmHere.firstChild.innerText = 'xablau';
+
+        let father = document.querySelector('#pai');
+
+        let newSibling = document.createElement('div');
+        newSibling.innerText = 'xaflau';
+        father.appendChild(newSibling);
+
+        let newSon = document.createElement('div');
+        newSon.innerText = 'XACLAU';
+        iAmHere.appendChild(newSon);
+
+        let newSonsSon = document.createElement('div');
+        newSonsSon.innerText = 'Xaplau'
+        iAmHere.firstChild.appendChild(newSonsSon);
+
+
+    </script>
+</body>
+</html>
+
