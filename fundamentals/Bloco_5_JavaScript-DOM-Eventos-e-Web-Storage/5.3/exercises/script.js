@@ -74,6 +74,8 @@ function createHolidayButton(name) {
 }
 createHolidayButton('xaclau');
 
+
+//ex. 3
 function changeColorButton (){
   document.querySelector('#btn-holiday').addEventListener('click', function() {
     let holiday = document.querySelector('.holiday');
@@ -84,5 +86,5 @@ function changeColorButton (){
     }
   });
 }
-
 changeColorButton();
+
