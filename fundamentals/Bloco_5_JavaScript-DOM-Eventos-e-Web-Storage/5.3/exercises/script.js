@@ -103,7 +103,7 @@ changeColorButton();
 function createFridayButton(name) {
   let button = document.createElement("button");
   button.innerText = name;
-  button.id = "btn-holiday";
+  button.id = "btn-friday";
   document.querySelector(".buttons-container").appendChild(button);
 }
 createFridayButton("Sexta-xeira");
@@ -111,4 +111,18 @@ createFridayButton("Sexta-xeira");
 // Exercício 5:
 // Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
 // É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
+
+function changeTextButton() {
+  document.querySelector("#btn-friday").addEventListener("click", function () {
+    let friday = document.querySelectorAll(".friday");
+    for (let key in friday){
+      if (friday[key].innerText == 'Sextou') {
+        friday[key].innerText = parseInt(friday[key].previousElementSibling.innerText + 1); // TO FIX
+      } else {
+        friday[key].innerText = 'Sextou';
+      }
+    }
+  });
+}
+changeTextButton();
 
