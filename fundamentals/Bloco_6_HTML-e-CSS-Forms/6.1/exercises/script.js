@@ -1,5 +1,6 @@
 const submitButton = document.querySelector("#submit-button");
 const root = document.querySelector("#root");
+const form = document.querySelector("#form");
 const stateList = [
   "Acre",
   "Alagoas",
@@ -67,8 +68,7 @@ submitButton.addEventListener("click", validateDate);
 
 function saveData(event) {
   event.preventDefault();
-  let savedData = [];
-  let inputs = {
+  let inputs = Object.entries({
     name: document.querySelector("#input-name").value,
     email: document.querySelector("#input-email").value,
     cpf: document.querySelector("#input-cpf").value,
@@ -76,24 +76,15 @@ function saveData(event) {
     city: document.querySelector("#input-city").value,
     state: document.querySelector("#input-state").value,
     house: document.querySelector("input[name='input-radio']:checked").value,
-    appartment: document.querySelector("input[name='input-radio']:checked")
-      .value,
+    appartment: document.querySelector("input[name='input-radio']:checked").value,
     resume: document.querySelector("#text-resume").value,
     role: document.querySelector("#input-role").value,
     roleDescription: document.querySelector("#role-description").value,
     date: document.querySelector("#input-date").value,
-  };
-  savedData.push(inputs);
+  });
+  console.log(inputs);
   document.querySelector("form").reset();
-  createLogData(savedData);
-  console.log(savedData);
+
 }
 submitButton.addEventListener("click", saveData);
 
-// function createLogData(param) {
-//   let logData = document.createElement("div");
-//   logData.value = param.entries(param);
-//   logData.innerHTML = param.entries(param);
-//   logData.innerText = param.entries(param);
-//   root.appendChild(logData);
-// }
