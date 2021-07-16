@@ -90,10 +90,10 @@ function saveData(event) {
 }
 submitButton.addEventListener("click", saveData);
 
-function createLogData(param) {
-  let logData = document.createElement("div");
-  logData.value = param.entries(param);
-  logData.innerHTML = param.entries(param);
-  logData.innerText = param.entries(param);
-  root.appendChild(logData);
-}
+// function createLogData(param) {
+//   let logData = document.createElement("div");
+//   logData.value = param.entries(param);
+//   logData.innerHTML = param.entries(param);
+//   logData.innerText = param.entries(param);
+//   root.appendChild(logData);
+// }
