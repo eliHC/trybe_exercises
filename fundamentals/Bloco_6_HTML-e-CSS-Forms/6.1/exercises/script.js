@@ -52,7 +52,7 @@ function validateDate(event) {
 
   if (
     year < 1950 ||
-    year > 2021 ||
+              year > 2021 ||
     month < 1 ||
     (month > 12) | (day < 1) ||
     day > monthLength[month]
@@ -76,8 +76,7 @@ function saveData(event) {
     city: document.querySelector("#input-city").value,
     state: document.querySelector("#input-state").value,
     house: document.querySelector("input[name='input-radio']:checked").value,
-    appartment: document.querySelector("input[name='input-radio']:checked")
-      .value,
+    appartment: document.querySelector("input[name='input-radio']:checked").value,
     resume: document.querySelector("#text-resume").value,
     role: document.querySelector("#input-role").value,
     roleDescription: document.querySelector("#role-description").value,
@@ -85,15 +84,43 @@ function saveData(event) {
   };
   savedData.push(inputs);
   document.querySelector("form").reset();
-  createLogData(savedData);
+//   createLogData(savedData);
   console.log(savedData);
 }
 submitButton.addEventListener("click", saveData);
 
-function createLogData(param) {
-  let logData = document.createElement("div");
-  logData.value = param.entries(param);
-  logData.innerHTML = param.entries(param);
-  logData.innerText = param.entries(param);
-  root.appendChild(logData);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function createLogData(param) {
+//   let createdDiv = document.createElement('div');
+//   root.appendChild(createdDiv);
+
+//   let createdUl = document.createElement('ul');
+//   createdDiv.appendChild(createdUl);
+  
+//     for (let i in param){
+// 	  let createdLi = document.createElement('li');
+// 	  createdLi.innerText = i + param[i];
+// 	  createdUl.appendChild(createdLi);
+// 	}
+// }
