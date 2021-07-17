@@ -53,7 +53,7 @@ function validateDate(event) {
 
   if (
     year < 1950 ||
-    year > 2021 ||
+              year > 2021 ||
     month < 1 ||
     (month > 12) | (day < 1) ||
     day > monthLength[month]
@@ -84,7 +84,4 @@ function saveData(event) {
   });
   console.log(inputs);
   document.querySelector("form").reset();
-
-}
-submitButton.addEventListener("click", saveData);
 
