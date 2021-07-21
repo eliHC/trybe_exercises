@@ -42,12 +42,12 @@ html {
   .container__header nav {
     display: flex;
     flex-flow: row wrap;
-    flex-basis: 100vw;  
+    flex-basis: 100vw; 
   }
 
   .container__header ul {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
     flex-basis: 100vw;  
   }

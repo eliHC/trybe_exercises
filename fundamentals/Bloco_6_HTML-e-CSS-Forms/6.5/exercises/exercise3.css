@@ -126,10 +126,34 @@
 
 
 @media print {
-  body * {
-    background-color: thistle;
+
+  body {
+    color: black;
   }
+
+  #aside {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  
+  #header {
+    display: none;
+  }
+
   #navigation {
     display: none;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  p {
+    width: 100vw;
+  }
+
+  #content-container {
+    display: flex;
+    flex-flow: column ;
   }
 }
