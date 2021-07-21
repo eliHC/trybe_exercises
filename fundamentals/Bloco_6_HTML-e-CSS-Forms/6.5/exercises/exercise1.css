@@ -26,6 +26,7 @@ figcaption {
   font-style: italic;
 }
 
+
 @media (min-width: 750px) {
   body {
     background-color: beige;
@@ -52,6 +53,7 @@ figcaption {
   .main-container figure img {
   }
 }
+
 
 @media (min-width: 1200px) {
   body {
