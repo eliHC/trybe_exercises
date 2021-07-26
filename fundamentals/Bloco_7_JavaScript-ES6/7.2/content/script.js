@@ -80,3 +80,4 @@
 //   console.log('País:', pairKeyValue[index][0]);
 //   console.log('Capital:', pairKeyValue[index][1]);
 // };
+
