@@ -41,6 +41,7 @@ const musicas = [
 
 function findMusic(id) {
   // Adicione seu código aqui
+  return musicas.find(() => id);
 }
 
 console.log(findMusic('31031685'))
