@@ -186,15 +186,17 @@ const handleError = (errorReason) =>
 
 // definição da função sendMarsTemperature...
 const sendMarsTemperature = (onSucess, onFail) => {
-  const sucessRate = Math.random() < 0.6;
-  console.log(sucessRate);
+  const sucessRate = Math.random() <= 0.6;
+  const tempMars = getMarsTemperature();
+
 
   setTimeout(() => {
-    if (sucessRate){
-      onSucess(getMarsTemperature())
-    } else {
-      onFail('Problema com a transmissão do sinal')
+    if (sucessRate) {
+      return onSucess(tempMars);
     }
+
+    return onFail('Robot is busy')
+    
   }, messageDelay());
 
 }
