@@ -17,48 +17,10 @@
 // O endereço para o qual a requisição será feita, ou seja, a url do serviço.
 // Um objeto contendo as especificações da requisição. Para essa API , atribuiremos a esse objeto as chaves method e headers
 
-// apiScript.js     
-const API_URL = 'https://icanhazdadjoke.com/';
-
-const appender = (toBeAppended, typeOfElement) => {
-  const element = document.createElement(typeOfElement);
-  element.innerText = toBeAppended;
-  document.querySelector('#jokeContainer').appendChild(element);
-}
-
-
-const fetchJoke = () => {
-  const myObject = {
-    method: 'GET',
-    headers: { 'Accept': 'application/json' }
-  };
-
-  fetch(API_URL, myObject)
-    .then(response => response.json())
-    .then(({ joke }) => appender(joke, 'p'))
-};
-
-window.onload = () => fetchJoke();
-
+   
 
 // O segundo parâmetro myObject define o tipo de request method: 'GET' e o formato da resposta headers: { 'Accept': 'application/json' } , como visto nas requisições via curl .
 // A função fetch é uma Promise e, como tal, dependendo de seus desdobramentos, podemos encadear procedimentos a serem feitos, utilizando as cláusulas .then (em caso de sucesso) e .catch (em caso de falha). A requisição fetch retorna um objeto Response . Utilizando .then , verifique a estrutura da resposta usando um console.log na response retornada pelo fetch .
-
-// apiScript.js     
-// const API_URL = 'https://icanhazdadjoke.com/';
-
-// const fetchJoke = () => {
-//   const myObject = {
-//     method: 'GET',
-//     headers: { 'Accept': 'application/json' }
-//   };
-
-//   fetch(API_URL, myObject)
-//     .then(response => console.log(response));
-// };
-
-// window.onload = () => fetchJoke();
-
 
 
 
@@ -68,8 +30,38 @@ window.onload = () => fetchJoke();
 // // Para isso, usamos o método .json() na resposta da API . Esse método converte o conteúdo do body da Response e retorna uma outra Promise , que, quando bem-sucedida, retorna um JSON contendo as informações da piada.
 // // A partir do fetch , troque o console.log() anterior pelo método .json() e imprima os dados da requisição.
 
-// // apiScript.js     
+
+
+const arrayToDivide = [2, 3, 5, 10,]
+
+const fuckThisShit = new Promise((resolve, reject) => {
+  let arrayo = [];
+  
+  for (index = 0; index < 10; index += 1) {
+    let num = Math.floor(Math.random() * 50);
+    arrayo.push(num * num);
+
+  }
+  const total = arrayo.reduce((acc, curr) => acc + curr);
+
+  console.log(arrayo);
+  console.log(total);
+
+  (total > 8000) ? reject() : resolve(total)
+
+})
+  .then((total) => arrayToDivide.map((n) => total / n))  
+  .then((array) => console.log(array.reduce((acc, curr) => acc + curr)))
+  .catch(() => console.log("É mais de oito mil! Essa promise deve estar quebrada!"))
+
 // const API_URL = 'https://icanhazdadjoke.com/';
+
+// const appender = (toBeAppended, typeOfElement) => {
+//   const element = document.createElement(typeOfElement);
+//   element.innerText = toBeAppended;
+//   document.querySelector('#jokeContainer').appendChild(element);
+// }
+
 
 // const fetchJoke = () => {
 //   const myObject = {
@@ -79,7 +71,7 @@ window.onload = () => fetchJoke();
 
 //   fetch(API_URL, myObject)
 //     .then(response => response.json())
-//     .then(data => console.log(data));
+//     .then(({ joke }) => appender(joke, 'p'))
 // };
 
 // window.onload = () => fetchJoke();
