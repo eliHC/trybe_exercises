@@ -6,70 +6,30 @@ const uppercase = (str, callback) => {
   }, 500);
 };
 
-test('Check if "test" is equal "test"', (done) => {
-  uppercase('test', (theString) =>{
-    try{
-      expect(theString).toMatch('TEST');
-      done();
-    } catch (error) {
-      done(error);
-    }
-  });
-});
-
-
-
-
-
-
-
-
-
-
-
 // Código base para os exercícios 2 e 3:
 // O código a seguir simula uma chamada ao banco de dados para buscar usuários. O resultado dessa busca é uma Promise , que é utilizada pelo método getUserName .
-// const users = [
-//   { id: 1, name: 'Mark' },
-//   { id: 2, name: 'Paul' },
-// ];
+const users = [
+  { id: 1, name: 'Mark' },
+  { id: 2, name: 'Paul' },
+];
 
-// const findUserById = (id) => new Promise((resolve, reject) => {
-//   const result = users.find((user) => user.id === id);
+const findUserById = (id) => new Promise((resolve, reject) => {
+  const result = users.find((user) => user.id === id);
 
-//   if (result) {
-//     return resolve(result);
-//   }
+  if (result) {
+    return resolve(result);
+  }
 
-//   return reject(new Error(`User with ${id} not found.`));
-// });
+  return reject(new Error(`User with ${id} not found.`));
+});
 
-// const getUserName = (userId) => findUserById(userId).then((user) => user.name);
-
-
-
-
-
-
-
-
-
+const getUserName = (userId) => findUserById(userId).then((user) => user.name);
 
 // 2 - Utilizando a sintaxe de Promise , faça um teste que verifique o resultado da função getUserName para o caso em que o usuário é encontrado, e também um teste para o caso em que o usuário não é encontrado.
 // Dica: Veja os dados falsos utilizados no banco de dados, disponíveis na variável users , para saber quais IDs existem.
 
-
-
-
-
-
 // 3 - Reescreva o teste do exercício anterior, desta vez utilizando a sintaxe de async/await .
 // Dica: Utilize o try/catch para o caso de erro.
-
-
-
-
-
 
 // 4 - O código abaixo busca no GitHub de um usuário, de acordo com a URL, seus repositórios, e retorna uma lista como resultado. Dada a URL 'https://api.github.com/orgs/tryber/repos' , faça um teste que verifique que os repositórios 'sd-01-week4-5-project-todo-list' e 'sd-01-week4-5-project-meme-generator' se encontram nessa lista.
 // const fetch = require('node-fetch');
@@ -81,15 +41,6 @@ test('Check if "test" is equal "test"', (done) => {
 //       return data.map((repo) => repo.name);
 //     });
 // };
-
-
-
-
-
-
-
-
-
 
 // 5 - Para este exercício, tente adivinhar a saída dos console.log dos testes abaixo sem executá-los, e veja se compreendeu bem o funcionamento do beforeEach e do afterEach .
 // beforeEach(() => console.log('1 - beforeEach'));
@@ -188,5 +139,7 @@ test('Check if "test" is equal "test"', (done) => {
 // 6.2 - Adicione uma nova funcionalidade para buscar pela idade dos animais. O retorno deve ser um array de objetos, mas, caso não ache nenhum, retorne uma mensagem de erro. Escreva tanto a função como o seu teste.
 module.exports = {
   uppercase,
-
+  users,
+  findUserById,
+  getUserName,
 }
