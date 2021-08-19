@@ -3,7 +3,7 @@ const {
   users,
   findUserById,
   getUserName,
-} = require('./exercises')
+} = require('../src/exercises')
 
 
  test('Check if "test" is equal "test"', (done) => {
