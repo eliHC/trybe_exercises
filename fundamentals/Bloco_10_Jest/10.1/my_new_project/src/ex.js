@@ -1,5 +1,6 @@
 // Parte I
 // Refaça os exercícios 1 a 5 do conteúdo de Testes unitários em JavaScript , dessa vez utilizando Jest .
+
 // Parte II
 // No Bloco 4 você desenvolveu um projeto para testar os seus conhecimentos em Javascript e lógica de programação: o Playground functions . Nos exercícios a seguir, você irá trabalhar com os testes para algumas funções que você criou! Aproveite para refatorá-las e usar todos os recursos que já aprendemos até aqui, como as Higher Order Functions e as features do Javascript ES6.
 // Para as funções encode e decode crie os seguintes testes:
@@ -8,14 +9,14 @@
 // Para a função decode teste se os números 1, 2, 3, 4 e 5 são convertido nas vogais a, e, i, o, u , respectivamente;
 // Teste se as demais letras/números não são convertidos para cada caso;
 // Teste se a string que é retornada pelas funções têm o mesmo número de caracteres que a string passada como parâmetro.
+
 // A função techList recebe como parâmetros um array contendo uma lista de tecnologias e uma string com um nome. Para cada tecnologia no array a função cria, em ordem alfabética, um objeto com a seguinte estrutura:
-// Copiar
 // {
 //   tech: 'nomeTecnologia',
 //   name: name,
 // }
+
 // Implemente a função techList a partir dos testes abaixo. Experimente refatorar a função que você criou para esse projeto! É importante nunca alterar os testes ou as variáveis já escritas no código .
-// Copiar
 // const techList = require('./techList.js');
 
 // describe('Testa a função techList', () => {
@@ -56,7 +57,6 @@
 
 // module.exports = techList;
 // A função hydrate recebe uma string no formato "numero bebida", e retorna a sugestão de quantos copos de água você deve beber para se hidratar. Para cada bebida, deve-se tomar um copo de água para não ter ressaca. Exemplo:
-// Copiar
 // // string recebida
 // '1 cerveja'
 // // retorno da função
@@ -72,7 +72,6 @@
 // // retorno da função
 // '2 copos de água'
 // Implemente a função hydrate a partir dos testes abaixo. Experimente refatorar a função que você criou para o projeto Playground Function! É importante nunca alterar os testes ou as variáveis já escritas no código .
-// Copiar
 // const hydrate = require('./hydrate.js');
 
 // describe('Testa a função hydrate', () => {
