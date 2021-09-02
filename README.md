@@ -1,1 +1,1 @@
-Repositório para armazenamento e controle dos exercícios ao longo do curso de desenvolvimento web da Trybe. 
+Repository for storing and tracking exercises throughout the Trybe web development course.
