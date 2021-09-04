@@ -4,33 +4,45 @@ import './App.css';
 class App extends Component {
   constructor(props){
     super(props)
-    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleTextChange = this.handleChange.bind(this);
     
     this.state = {
-      howManyBlinks: 0,
+      name: '',
+      age: 0,
     }
   }
 
-  handleTextChange(event) {
+  handleChange({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
     this.setState({
-      howManyBlinks: event.target.value,
-    })
+      [name]: value,
+    });
   }
 
   render() {
+
     return (
-      <div>
-        <select>xx</select>
-        <input 
-        name='howManyBlinks'
-        type='number' 
-        onChange={this.handleTextChange}
-        value={this.state.howManyBlinks}
-        >
-        </input>
-        <input type='checkbox'></input>
-        <textarea>area pra texto</textarea>
-      </div>
+      <>
+        <label htmlFor={'name'}>
+          <input
+          name='name'
+          type='text' 
+          onChange={this.handleChange}
+          value={this.state.name}
+          />
+        </label>
+
+        <label htmlFor={'age'}>
+          <input
+          name='age'
+          type='number' 
+          onChange={this.handleChange}
+          value={this.state.age}
+          />
+        </label>
+      </>
     )
   }
 }
