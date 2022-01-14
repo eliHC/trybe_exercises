@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        height: 50px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p>Color: <span id="value">white</span></p>
+      <button id="previous">Previous color</button>
+      <button id="next">Next color</button>
+    </div>
+    <script>
+      const changeColor = () => ({
+        type: 'PREVIOUS_COLOR',
+        type: 'NEXT_COLOR',
+      })
+
+
+      const ESTADO_INICIAL = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      };
+      
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        switch (action.type) {
+          case 'NEXT_COLOR':
+            if (!state.index > state.colors.length) {
+              state.index += 1;
+              break;
+            }
+
+          case 'PREVIOUS_COLOR':
+            if (!state.index < 0) {
+              state.index -= 1;
+              break;
+            }
+
+          default:
+            return state;
+        }
+      };
+
+      const store = Redux.createStore(reducer);
+
+      console.log(store);
+
+      document.querySelector('#previous').addEventListener('click', () => {  store.dispatch(changeColor())  });
+      document.querySelector('#next').addEventListener('click', () => { store.dispatch(changeColor()) });
+
+      console.log(store)
+
+    </script>
+  </body>
+</html>
