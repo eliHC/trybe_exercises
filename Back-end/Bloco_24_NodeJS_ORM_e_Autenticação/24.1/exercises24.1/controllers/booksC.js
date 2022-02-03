@@ -5,7 +5,7 @@ const readAll = async (req, res) => {
 
   const books = await booksServices.readAll()
 
-  return res.status(200).send('success');
+  return res.status(200).send(books);
 };
 
 module.exports = {

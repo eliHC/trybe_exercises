@@ -5,7 +5,7 @@ const booksController = require('./controllers/booksC');
 
 app.use(express.json());
 
-app.route('/books').get(booksController);
+app.route('/books').get(booksController.readAll);
 
 
 

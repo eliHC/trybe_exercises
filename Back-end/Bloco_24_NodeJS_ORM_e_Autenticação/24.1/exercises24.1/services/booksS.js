@@ -1,7 +1,7 @@
-// const BookModel = require()
+const { Book } = require('../models');
 
-const readAll = async () => {
-  const booksQuery = await BookModel.queryAllBooks();
+const readAll = () => {
+  const booksQuery = Book.findAll();
 
   return booksQuery;
 };
