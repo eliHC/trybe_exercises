@@ -1,5 +1,5 @@
 //----------------------------------------- <<<
-use('teste') // <<< DB NAME
+use('test') // <<< DB NAME
 db.inventory.insertOne( //  COLLECTION(TABLE) NAME
   {
     item: 'caneca',
@@ -13,7 +13,7 @@ db.inventory.insertOne( //  COLLECTION(TABLE) NAME
 
 
 //----------------------------------------- <<<
-use('teste')
+use('test')
 db.inventory.insertMany([ // <<< MANY = []
   {
     item: 'Stapler',
@@ -38,13 +38,13 @@ db.inventory.insertMany([ // <<< MANY = []
 
 
 //----------------------------------------- <<< FIND ALL GENERIC
-use('teste')
+use('test')
 db.inventory.find()
 //----------------------------------------- |||
 
 
 //----------------------------------------- <<< FIND FILTERING BY TAGS[]
-use('teste')
+use('test')
 db.inventory.find(
   {
     item: 'Pen',
@@ -55,7 +55,7 @@ db.inventory.find(
 
 
 //----------------------------------------- <<< FIND GENERIC W/ PROJECTION HIDING ID FIELD
-use('teste')
+use('test')
 db.inventory.find(
   {},
   {
@@ -66,31 +66,31 @@ db.inventory.find(
 
 
 //----------------------------------------- <<< FILTED BY SINGLE FIELD
-use('teste')
+use('test')
 db.inventory.find({qty: '200' })
 //----------------------------------------- |||
 
 
 //----------------------------------------- <<< FIND FILTERED BY MULTIPLE FIELDS
-use('teste')
+use('test')
 db.inventory.find({qty: '200', item: 'Pen' })
 //----------------------------------------- |||
 
 
 //----------------------------------------- <<< GOING INSIDE THE SIZE OBJECT = 'object.field.field.etc' 
-use('teste')
+use('test')
 db.inventory.find({'size.h': '10', item: 'Pen' })
 //----------------------------------------- |||
 
 
 //----------------------------------------- <<< USING LIMIT
-use('teste')
+use('test')
 db.inventory.find({qty: '200', item: 'Pen' }).limit(1)
 //----------------------------------------- |||
 
 
 //----------------------------------------- <<< USING SKIP
-use('teste')
+use('test')
 db.inventory.find({qty: '16'}).skip(3)
 //----------------------------------------- |||
 
