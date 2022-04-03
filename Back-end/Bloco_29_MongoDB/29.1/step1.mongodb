@@ -18,28 +18,28 @@ db.inventory.insertMany([ // <<< MANY = []
   {
     item: 'Stapler',
     qty: '44',
-    tags: ['office', 'black'],
-    size: { h: '10', w: '12', uom: 'cm' }
+    tags: ['office', 'green'],
+    size: { h: '6', w: '3', uom: 'cm' }
   },
   {
     item: 'Pencil',
     qty: '200',
     tags: ['office', 'black'],
-    size: { h: '10', w: '12', uom: 'cm' }
+    size: { h: '7', w:'3', uom: 'cm' }
   },
   {
     item: 'Pen',
     qty: '200',
     tags: ['office', 'blue'],
-    size: { h: '10', w: '12', uom: 'cm' }
+    size: { h: '910', w: '122', uom: 'cm' }
   }]
 );
 //----------------------------------------- |||
 
 
-//----------------------------------------- <<< FIND ALL GENERIC
+//----------------------------------------- <<< FIND ALL GENERIC + PRETTY
 use('test')
-db.inventory.find()
+db.inventory.find().pretty()
 //----------------------------------------- |||
 
 
@@ -79,7 +79,7 @@ db.inventory.find({qty: '200', item: 'Pen' })
 
 //----------------------------------------- <<< GOING INSIDE THE SIZE OBJECT = 'object.field.field.etc' 
 use('test')
-db.inventory.find({'size.h': '10', item: 'Pen' })
+db.inventory.find({'size.h': '910', item: 'Pen' })
 //----------------------------------------- |||
 
 
