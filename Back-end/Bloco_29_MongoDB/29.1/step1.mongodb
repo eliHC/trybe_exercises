@@ -1,0 +1,96 @@
+//----------------------------------------- <<<
+use('test') // <<< DB NAME
+db.inventory.insertOne( //  COLLECTION(TABLE) NAME
+  {
+    item: 'caneca',
+    qty: '16',
+    tags: ['office', 'black'],
+    size: { h: '10', w: '12', uom: 'cm' }
+  }, //  <<< QUERY OBJECT
+  {} //  <<< PROJECTION OBJECT
+);
+//----------------------------------------- |||
+
+
+//----------------------------------------- <<<
+use('test')
+db.inventory.insertMany([ // <<< MANY = []
+  {
+    item: 'Stapler',
+    qty: '44',
+    tags: ['office', 'green'],
+    size: { h: '6', w: '3', uom: 'cm' }
+  },
+  {
+    item: 'Pencil',
+    qty: '200',
+    tags: ['office', 'black'],
+    size: { h: '7', w:'3', uom: 'cm' }
+  },
+  {
+    item: 'Pen',
+    qty: '200',
+    tags: ['office', 'blue'],
+    size: { h: '910', w: '122', uom: 'cm' }
+  }]
+);
+//----------------------------------------- |||
+
+
+//----------------------------------------- <<< FIND ALL GENERIC + PRETTY
+use('test')
+db.inventory.find().pretty()
+//----------------------------------------- |||
+
+
+//----------------------------------------- <<< FIND FILTERING BY TAGS[]
+use('test')
+db.inventory.find(
+  {
+    item: 'Pen',
+    tags: ['office', 'blue'],
+  }
+)
+//----------------------------------------- |||
+
+
+//----------------------------------------- <<< FIND GENERIC W/ PROJECTION HIDING ID FIELD
+use('test')
+db.inventory.find(
+  {},
+  {
+    _id: false,
+  }
+)
+//----------------------------------------- |||
+
+
+//----------------------------------------- <<< FILTED BY SINGLE FIELD
+use('test')
+db.inventory.find({qty: '200' })
+//----------------------------------------- |||
+
+
+//----------------------------------------- <<< FIND FILTERED BY MULTIPLE FIELDS
+use('test')
+db.inventory.find({qty: '200', item: 'Pen' })
+//----------------------------------------- |||
+
+
+//----------------------------------------- <<< GOING INSIDE THE SIZE OBJECT = 'object.field.field.etc' 
+use('test')
+db.inventory.find({'size.h': '910', item: 'Pen' })
+//----------------------------------------- |||
+
+
+//----------------------------------------- <<< USING LIMIT
+use('test')
+db.inventory.find({qty: '200', item: 'Pen' }).limit(1)
+//----------------------------------------- |||
+
+
+//----------------------------------------- <<< USING SKIP
+use('test')
+db.inventory.find({qty: '16'}).skip(3)
+//----------------------------------------- |||
+
